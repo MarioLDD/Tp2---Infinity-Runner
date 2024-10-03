@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public static event Action OnAvoidObstacleEvent;
     public static event Action OnGameOverEvent;
 
     [SerializeField] private float speed;
@@ -16,6 +17,14 @@ public class EnemyController : MonoBehaviour
         if (transform.position.x < deactivationPoint)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            OnAvoidObstacleEvent?.Invoke();
         }
     }
 
