@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private GameObject gameOver_Panel;
-    [SerializeField] private ScoreManager scoreManager;
 
     void Start()
     {
@@ -19,6 +18,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
+        gameOver_Panel.SetActive(true);
     }
 
     public void ResetGame()

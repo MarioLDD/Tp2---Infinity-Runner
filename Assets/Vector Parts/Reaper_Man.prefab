@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 95854159302373372}
   - component: {fileID: 286512809501497588}
   - component: {fileID: 5229050170854187563}
-  - component: {fileID: 3958530383336865912}
+  - component: {fileID: 725913177019422064}
   m_Layer: 0
   m_Name: Reaper_Man
   m_TagString: Player
@@ -1273,8 +1273,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!70 &3958530383336865912
-CapsuleCollider2D:
+--- !u!60 &725913177019422064
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1305,9 +1305,39 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19078808, y: 2.8117537}
-  m_Size: {x: 4.302975, y: 5.6587677}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.838896, y: 4.269462}
+      - {x: 1.4345381, y: 4.97072}
+      - {x: 0.73176944, y: 5.5227113}
+      - {x: -0.19609812, y: 5.706353}
+      - {x: -0.8238499, y: 5.6336064}
+      - {x: -1.5165263, y: 5.3413963}
+      - {x: -2.0316775, y: 4.9360595}
+      - {x: -2.4021819, y: 4.3290267}
+      - {x: -2.3474414, y: 2.6018393}
+      - {x: -2.0905871, y: 2.1821795}
+      - {x: -1.7884666, y: 1.910842}
+      - {x: -1.064537, y: 1.633033}
+      - {x: -1.3266379, y: 0.92001474}
+      - {x: -0.97017646, y: 0.024398983}
+      - {x: 1.087835, y: 0.014594733}
+      - {x: 1.1446794, y: 0.90525365}
+      - {x: 0.7958993, y: 1.6873567}
+      - {x: 1.6500423, y: 2.1991408}
+      - {x: 1.8893228, y: 2.714831}
+      - {x: 2.0001807, y: 3.3779514}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1933520965609426
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,12 +24,11 @@ public class ObjectPool : MonoBehaviour
         poolDictionary = new Dictionary<int, Pool>();
         for (int i = 0; i < pools.Count; i++)
         {
-            pools[i].Initialize(i, transform);  // Inicializar cada pool
-            poolDictionary.Add(i, pools[i]);    // Usar el índice como el ID del pool
+            pools[i].Initialize(i, transform);
+            poolDictionary.Add(i, pools[i]);
         }
     }
 
-    // Método para obtener un objeto del pool correspondiente al ID y moverlo a la posición dada
     public GameObject GetObject(int elementID, Vector3 position)
     {
         if (poolDictionary.ContainsKey(elementID))
@@ -38,12 +37,11 @@ public class ObjectPool : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No pool found with ID: " + elementID);
+            Debug.LogWarning($"No pool found with ID: {elementID}");
             return null;
         }
     }
 
-    // Método para devolver un objeto al pool
     public void ReturnObject(int elementID, GameObject obj)
     {
         if (poolDictionary.ContainsKey(elementID))
@@ -52,11 +50,10 @@ public class ObjectPool : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No pool found with ID: " + elementID);
+            Debug.LogWarning($"No pool found with ID: {elementID}");
         }
     }
 
-    // Método para obtener la cantidad de tipos de objetos en el pool
     public int GetPoolCount()
     {
         return pools.Count;
@@ -65,10 +62,10 @@ public class ObjectPool : MonoBehaviour
     [System.Serializable]
     public class Pool
     {
-        public GameObject prefab;        // Prefab del objeto
-        public int size;                 // Cantidad de objetos a generar inicialmente
+        public GameObject prefab;
+        public int size;
         private Queue<GameObject> objects;
-        private int elementID;           // ID del tipo de objeto (asignado en ObjectPool)
+        private int elementID;
 
         public void Initialize(int id, Transform parent)
         {
@@ -96,9 +93,8 @@ public class ObjectPool : MonoBehaviour
             }
             else
             {
-                obj = Object.Instantiate(prefab); // Crear nuevo si no hay objetos disponibles
+                obj = Object.Instantiate(prefab);
 
-                // Asignar el identificador del pool al objeto
                 PooledObject pooledObject = obj.AddComponent<PooledObject>();
                 pooledObject.SetPoolID(elementID, GameObject.FindObjectOfType<ObjectPool>());
             }
@@ -114,4 +110,3 @@ public class ObjectPool : MonoBehaviour
         }
     }
 }
-
