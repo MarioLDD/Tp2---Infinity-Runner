@@ -47,10 +47,10 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyController.OnGameOverEvent += GameOver;
+        ObstacleController.OnGameOverEvent += GameOver;
     }
     private void OnDisable()
     {
-        EnemyController.OnGameOverEvent -= GameOver;
+        ObstacleController.OnGameOverEvent -= GameOver;
     }
 }

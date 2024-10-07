@@ -5,7 +5,7 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool Instance { get; private set; }
 
-    public List<Pool> pools;
+   [SerializeField] private List<Pool> pools;
     private Dictionary<int, Pool> poolDictionary;
 
     private void Awake()
@@ -76,7 +76,6 @@ public class ObjectPool : MonoBehaviour
                 GameObject obj = Object.Instantiate(prefab, parent);
                 obj.SetActive(false);
 
-                // Asignar el identificador del pool al objeto
                 PooledObject pooledObject = obj.AddComponent<PooledObject>();
                 pooledObject.SetPoolID(elementID, parent.GetComponent<ObjectPool>());
 

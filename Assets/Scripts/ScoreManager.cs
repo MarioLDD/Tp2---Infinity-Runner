@@ -47,10 +47,10 @@ public class ScoreManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        EnemyController.OnAvoidObstacleEvent += ScoreUpdate;
+        ObstacleController.OnAvoidObstacleEvent += ScoreUpdate;
     }
     private void OnDisable()
     {
-        EnemyController.OnAvoidObstacleEvent -= ScoreUpdate;
+        ObstacleController.OnAvoidObstacleEvent -= ScoreUpdate;
     }
 }
